@@ -18,6 +18,9 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
+    "axios": "^1.5.0",
+    "devextreme": "23.1.5",
+    "devextreme-vue": "23.1.5",
     "pinia": "^2.1.6"
   }
 }

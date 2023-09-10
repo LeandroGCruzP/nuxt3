@@ -1,12 +1,17 @@
 <script setup>
     definePageMeta({ layout: 'auth' })
-    // import { useCounterStore } from '@/stores/counter'
+
+    import 'devextreme/dist/css/dx.light.css'
+    import { DxDataGrid, DxColumn } from 'devextreme-vue/data-grid'
     import { useAuth } from '@/stores/auth'
+    import { useUsers } from '@/stores/users'
 
-    // const counter = useCounterStore()
     const auth = useAuth()
+    const user = useUsers()
 
-    console.log(auth.user)
+    onMounted(async () => {
+      await user.listUsers();
+    })
 </script>
 
 <template>
@@ -14,8 +19,10 @@
         <h1>Page Users</h1>
         <span>Welcome {{ auth.user.username }}</span>
 
-        <!-- <div>Current Count: {{ counter.$state }}</div> -->
-
-        <!-- <button @click="counter.increment()">Count</button> -->
+        <DxDataGrid :data-source="user.users">
+          <DxColumn data-field="id" />
+          <DxColumn data-field="name" />
+          <DxColumn data-field="createdAt" data-type="date" />
+        </DxDataGrid>
     </div>
 </template>
