@@ -4,6 +4,6 @@
 
 <template>
     <div>
-        <h1>Page Devices</h1>
+        <h1>Devices</h1>
     </div>
 </template>

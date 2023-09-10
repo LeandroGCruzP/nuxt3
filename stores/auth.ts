@@ -5,7 +5,7 @@ export const useAuth = defineStore({
   state: () => {
     return {
       token: 'token',
-      user: {} || ''
+      user: {}
     }
   },
   actions: {
