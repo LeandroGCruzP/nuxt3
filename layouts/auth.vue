@@ -1,6 +1,8 @@
 <template>
-    <div>
+    <div class="flex">
         <Sidebar />
-        <slot />
+        <div class="p-4">
+            <slot />
+        </div>
     </div>
 </template>
